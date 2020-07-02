@@ -9,7 +9,6 @@
   "author": "buddhimal",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
-    "object-sizeof": "^1.6.1"
+    "express": "^4.17.1"
   }
 }
