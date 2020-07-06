@@ -1,9 +1,15 @@
 const express = require('express');
-var sizeof = require('object-sizeof')
+const authenticator = require('./middlewares/authenticator');
+const mailer = require('./middlewares/emailjob');
+// var sizeof = require('object-sizeof')
 const app = express();
 const PORT = 5000;
 
 app.use(express.json());
+
+app.use(authenticator);
+app.use(mailer);
+
 
 let heroArray = [{id: 1, name: 'Captain America'}, {id: 2, name: 'Iron Man'}, {id: 3, name: 'Black Widow'}]
 
