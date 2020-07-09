@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const heroes = require('./routes/heroes');
 const home = require('./routes/home');
 const authenticator = require('./middleware/authenticator');
@@ -10,8 +11,16 @@ app.use(express.json());
 
 app.use(authenticator);
 app.use(mailer);
-app.use('/api/heroes',heroes);
-app.use('/',home);
+app.use('/api/heroes', heroes);
+app.use('/', home);
+
+mongoose
+    .connect("mongodb://localhost/herodb", {useNewUrlParser: true,useUnifiedTopology: true})
+    .then(() => {
+        //if one line can ignore {}
+        console.log("Connected to Database Successfully...");
+    })
+    .catch(err => console.log("unable to connect Database... :", err));
 
 
 app.listen(PORT, function () {
