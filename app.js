@@ -1,6 +1,6 @@
 const express = require('express');
-const authenticator = require('./middlewares/authenticator');
-const mailer = require('./middlewares/emailjob');
+const authenticator = require('./middleware/authenticator');
+const mailer = require('./middleware/emailjob');
 // var sizeof = require('object-sizeof')
 const app = express();
 const PORT = 5000;

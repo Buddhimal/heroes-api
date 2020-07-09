@@ -19,13 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f687d359-b354-444f-8c5b-d8298fcb0a60" name="Default Changelist" comment="First Conmmit">
-      <change afterPath="$PROJECT_DIR$/middlewares/authenticator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middlewares/emailjob.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/promise.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/random.js" afterDir="false" />
+    <list default="true" id="f687d359-b354-444f-8c5b-d8298fcb0a60" name="Default Changelist" comment="Middleware">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/authenticator.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/authenticator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/emailjob.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/emailjob.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +95,8 @@
       <workItem from="1593432332521" duration="1288000" />
       <workItem from="1593434564675" duration="7350000" />
       <workItem from="1593692328572" duration="6131000" />
-      <workItem from="1593883670830" duration="7994000" />
+      <workItem from="1593883670830" duration="8636000" />
+      <workItem from="1594295732654" duration="1330000" />
     </task>
     <task id="LOCAL-00001" summary="First Conmmit">
       <created>1593693431357</created>
@@ -120,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593694496723</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Middleware">
+      <created>1594063432110</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1594063432110</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,16 +142,27 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Conmmit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Conmmit" />
+    <MESSAGE value="Middleware" />
+    <option name="LAST_COMMIT_MESSAGE" value="Middleware" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="183" key="#Deployment" timestamp="1593693512518">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="183" key="#Deployment/0.0.1920.1050@0.0.1920.1050" timestamp="1593693512518" />
+    <state x="845" y="388" width="520" height="548" key="#Notifications" timestamp="1594295821818">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="845" y="388" width="520" height="548" key="#Notifications/0.0.1920.1050/-1600.171.1600.870@0.0.1920.1050" timestamp="1594295821818" />
+    <state x="555" y="79" key="CommitChangelistDialog2" timestamp="1594296481779">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="555" y="79" key="CommitChangelistDialog2/0.0.1920.1050/-1600.171.1600.870@0.0.1920.1050" timestamp="1594296481779" />
+    <state x="555" y="79" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1594063430941" />
     <state x="740" y="266" key="FileChooserDialogImpl" timestamp="1593693361361">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -170,10 +187,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="358" y="51" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1593699178772" />
-    <state x="696" y="235" key="Vcs.Push.Dialog.v2" timestamp="1593694505329">
+    <state x="696" y="235" key="Vcs.Push.Dialog.v2" timestamp="1594063438315">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="696" y="235" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1593694505329" />
+    <state x="696" y="235" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1594063438315" />
     <state x="677" y="313" key="git4idea.merge.GitPullDialog" timestamp="1593694370784">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
