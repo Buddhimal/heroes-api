@@ -1,55 +1,107 @@
 const express = require('express');
+const Hero = require('../models/hero');
 const router = express.Router();
 
 let heroArray = [{id: 1, name: 'Captain America'}, {id: 2, name: 'Iron Man'}, {id: 3, name: 'Black Widow'}]
 
-router.get('/', (req, res) => {
-    let heroes = ['Captain America', 'Iron Man', 'Black Widow'];
-    res.send(heroArray);
+router.get('/', async (req, res) => {
+    // let heroes = ['Captain America', 'Iron Man', 'Black Widow'];
+    // res.send(heroArray);
+
+    let heroes = await Hero.find();
+    // let heroes = await Hero.find({deceased:true});
+    // let heroes = await Hero.find({ likeCount:{$nin:1} });
+    // let heroes = await Hero.find({ likeCount:{$eq:null} });
+    // let heroes = await Hero.find({deceased: true}).select({name:1}); //select only name
+    // let heroes = await Hero.find().sort({name:'asc'});
+    // let heroes = await Hero.find().skip(10).limit(10); skipp 1st 10 and get next 10 (for pagination)
+    res.send(heroes);
+
 });
 
-router.get('/:heroId', (req, res) => {
-    let heroId = parseInt(req.params.heroId);
+router.get('/:heroId', async (req, res) => {
 
-    let optionalvalue = req.query.showmore;
+    // let heroId = parseInt(req.params.heroId);
+    let heroId = req.params.heroId;
+
+    let heroes = await Hero.findById(heroId);
+    res.send(heroes);
+
+    // let optionalvalue = req.query.showmore;
+
     // let heroes = ['Captain America', 'Iron Man', 'Black Widow'];
     // let heroes = {id: 1, name: 'Captain America', id: 2, name: 'Iron Man', id: 3, name: 'Black Widow'};
     // let hero = {id: 1, name: 'Captain America'};
     // let heroes = ['Captain America', 'Iron Man', 'Black Widow'];
     // res.send("Requesting hero :" + heroId);
 
-    let hero = heroArray.find(h => h.id === heroId);
-
-    if (!hero)
-        res.status(404).send("the givent id does not exists on our server");
-
-    res.send(hero);
+    // let hero = heroArray.find(h => h.id === heroId);
+    //
+    // if (!hero)
+    //     res.status(404).send("the givent id does not exists on our server");
+    //
+    // res.send(hero);
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
 
     if (!req.body.heroName)
         return res.status(400).send("Please add mandotory data");
 
-    let heroId = parseInt(req.params.heroId);
-    let newHero = {id: heroArray.length + 1, name: req.body.heroName};
+    try {
+        let heroToBeAddedToDb = new Hero({
+            name: req.body.heroName,
+            birthName: req.body.birthName,
+            movies: req.body.movies,
+            likeCount: req.body.likeCount,
+            imgUrl: req.body.imgUrl,
+            deceased: req.body.deceased
 
-    heroArray.push(newHero);
-    res.send(heroArray);
+        });
+
+        heroToBeAddedToDb = await heroToBeAddedToDb.save();
+        res.send(heroToBeAddedToDb);
+    } catch (e) {
+        return res.status(500).send(e.message);
+    }
+
+    // let heroId = parseInt(req.params.heroId);
+    // let newHero = {id: heroArray.length + 1, name: req.body.heroName};
+    //
+    // heroArray.push(newHero);
+    // res.send(heroArray);
 });
 
-router.put('/:heroId', (req, res) => {
+// router.put('/:heroId', async (req, res) => {
+//
+//     let heroId = parseInt(req.params.heroId);
+//     // let newHero = {id: heroArray.length + 1, name: req.body.heroName};
+//
+//     let hero = await Hero.findById(req.params.heroId);
+//
+//     hero.set({heroName: req.body.heroName});
+//     hero = await hero.save();
+//
+//     // let heroes = await Hero.findByIdAndUpdate(heroId);
+//
+//     // let newHero = {id: heroId, name: req.body.heroName};
+//     // let hero = heroArray.find(h => h.id === heroId);
+//     // let index = heroArray.indexOf(hero);
+//     //
+//     // heroArray[index] = newHero;
+//     //
+//     res.send(hero);
+//
+// });
 
-    let heroId = parseInt(req.params.heroId);
-    // let newHero = {id: heroArray.length + 1, name: req.body.heroName};
+router.put('/:heroId', async (req, res) => {
 
-    let newHero = {id: heroId, name: req.body.heroName};
-    let hero = heroArray.find(h => h.id === heroId);
-    let index = heroArray.indexOf(hero);
-
-    heroArray[index] = newHero;
-
-    res.send(heroArray);
+    let hero = await Hero.findByIdAndUpdate(
+        {_id:req.params.heroId},
+        {$set: {name: req.body.heroName}},
+        {new:true, useFindAndModify:false}
+    );
+    res.send(hero);
 
 });
 
