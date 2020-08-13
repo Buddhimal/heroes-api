@@ -20,8 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f687d359-b354-444f-8c5b-d8298fcb0a60" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/hero.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/hero.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/heroes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/heroes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +102,9 @@
       <workItem from="1593883670830" duration="8636000" />
       <workItem from="1594295732654" duration="7268000" />
       <workItem from="1594828814592" duration="6770000" />
-      <workItem from="1595247221594" duration="733000" />
+      <workItem from="1595247221594" duration="1546000" />
+      <workItem from="1595855430033" duration="3024000" />
+      <workItem from="1597062823470" duration="5676000" />
     </task>
     <task id="LOCAL-00001" summary="First Conmmit">
       <created>1593693431357</created>
@@ -148,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594306513780</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Create put method">
+      <created>1595247969598</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1595247969599</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,7 +186,8 @@
     <MESSAGE value="Middleware rename" />
     <MESSAGE value="Add new routes" />
     <MESSAGE value="Config mongodb and create models" />
-    <option name="LAST_COMMIT_MESSAGE" value="Config mongodb and create models" />
+    <MESSAGE value="Create put method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create put method" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="183" key="#Deployment" timestamp="1593693512518">
@@ -183,9 +198,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="845" y="388" width="520" height="548" key="#Notifications/0.0.1920.1050/-1600.171.1600.870@0.0.1920.1050" timestamp="1594295821818" />
-    <state x="555" y="79" key="CommitChangelistDialog2" timestamp="1594306512689">
+    <state x="555" y="79" key="CommitChangelistDialog2" timestamp="1595247968505">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state x="555" y="79" key="CommitChangelistDialog2/0.0.1920.1050/-1600.-173.1600.870@0.0.1920.1050" timestamp="1595247968505" />
     <state x="555" y="79" key="CommitChangelistDialog2/0.0.1920.1050/-1600.171.1600.870@0.0.1920.1050" timestamp="1594306512689" />
     <state x="555" y="79" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1594063430941" />
     <state x="740" y="266" key="FileChooserDialogImpl" timestamp="1593693361361">
@@ -212,9 +228,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="358" y="51" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1593699178772" />
-    <state x="696" y="235" key="Vcs.Push.Dialog.v2" timestamp="1594306516428">
+    <state x="696" y="235" key="Vcs.Push.Dialog.v2" timestamp="1595247972480">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state x="696" y="235" key="Vcs.Push.Dialog.v2/0.0.1920.1050/-1600.-173.1600.870@0.0.1920.1050" timestamp="1595247972480" />
     <state x="696" y="235" key="Vcs.Push.Dialog.v2/0.0.1920.1050/-1600.171.1600.870@0.0.1920.1050" timestamp="1594306516428" />
     <state x="696" y="235" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1594063438315" />
     <state x="677" y="313" key="git4idea.merge.GitPullDialog" timestamp="1593694370784">

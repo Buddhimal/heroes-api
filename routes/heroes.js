@@ -8,9 +8,9 @@ router.get('/', async (req, res) => {
     // let heroes = ['Captain America', 'Iron Man', 'Black Widow'];
     // res.send(heroArray);
 
-    let heroes = await Hero.find();
+    // let heroes = await Hero.find();
     // let heroes = await Hero.find({deceased:true});
-    // let heroes = await Hero.find({ likeCount:{$nin:1} });
+    let heroes = await Hero.find({ likeCount:{$gt:0} });
     // let heroes = await Hero.find({ likeCount:{$eq:null} });
     // let heroes = await Hero.find({deceased: true}).select({name:1}); //select only name
     // let heroes = await Hero.find().sort({name:'asc'});
@@ -105,18 +105,36 @@ router.put('/:heroId', async (req, res) => {
 
 });
 
-router.delete('/:heroId', (req, res) => {
+// router.delete('/:heroId', (req, res) => {
+//
+//     let heroId = (req.params.heroId);
+//     let hero = heroArray.find(h => h.id === heroId);
+//
+//     if (!hero)
+//         return res.status(400).send("hero not exits :"+heroId);
+//
+//     let index = heroArray.indexOf(hero);
+//     heroArray.splice(index, 1);
+//
+//     res.send(heroArray);
+// });
 
-    let heroId = parseInt(req.params.heroId);
-    let hero = heroArray.find(h => h.id === heroId);
+router.delete('/:heroId', async (req,res) =>{
+    // let heroId = parseInt(req.params.heroId);
+    // let hero = heroesArray.find(h=> h.id === heroId);
 
-    if (!hero)
-        return res.status(400).send("hero not exits");
+    let hero = await Hero.findById(req.params.heroId);
 
-    let index = heroArray.indexOf(hero);
-    heroArray.splice(index, 1);
+    if(!hero){
+        return res.status(404).send("The given Id does not our server ");
+    }
 
-    res.send(heroArray);
-});
+    // let deleteHero = heroesArray.indexOf(hero);
+    // heroesArray.splice(deleteHero,1);
+
+    hero.deleteOne({_id :req.params.heroId });
+
+    res.send(hero);
+})
 
 module.exports = router;
