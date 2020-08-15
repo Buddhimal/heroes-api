@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const heroes = require('./routes/heroes');
 const home = require('./routes/home');
 const users = require('./routes/users');
+const auth = require('./routes/auth');
 const cors =require("cors")
 const authenticator = require('./middleware/authenticator');
 const mailer = require('./middleware/emailjob');
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use(cors());
 app.use(authenticator);
 app.use(mailer);
+app.use('/api/auth', auth);
 app.use('/api/heroes', heroes);
 app.use('/api/users', users);
 app.use('/', home);
